@@ -21,7 +21,8 @@ export default {
   methods: {
     handleVideoEnd() {
       // 동영상이 끝나면 특정 URL로 이동
-      window.location.href = "https://www.genesis.com/kr/ko/main.html"; // 원하는 URL로 변경
+      window.location.href =
+        "https://h-event.hyundai.com/event/electrified_gv70_drive"; // 원하는 URL로 변경
     },
   },
 };
