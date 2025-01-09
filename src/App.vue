@@ -9,7 +9,7 @@
         @ended="handleVideoEnd"
         class="fullscreen-video"
       >
-        <source src="@/assets/마이크로페이지 영상시안04.mp4" type="video/mp4" />
+        <source src="@/assets/invitation_Video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
