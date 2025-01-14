@@ -9,7 +9,7 @@
         @ended="handleVideoEnd"
         class="fullscreen-video"
       >
-        <source src="@/assets/invitation_Video.mp4" type="video/mp4" />
+        <source src="@/assets/invitation_Video_250115.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
