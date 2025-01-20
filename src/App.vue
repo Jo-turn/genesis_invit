@@ -20,9 +20,29 @@
 export default {
   methods: {
     handleVideoEnd() {
-      // 동영상이 끝나면 특정 URL로 이동
-      window.location.href =
-        "https://h-event.hyundai.com/event/electrified_gv70_drive"; // 원하는 URL로 변경
+      // 현재 시간 기록 (한국 표준시로 변환)
+      const timestamp = new Date().toLocaleString("ko-KR", {
+        timeZone: "Asia/Seoul",
+      });
+
+      fetch("/api/log-visit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ timestamp }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data.message); // 성공 메시지 출력
+          // URL 이동
+          window.location.href =
+            "https://h-event.hyundai.com/event/electrified_gv70_drive";
+        })
+        .catch((error) => {
+          console.error("Error logging visit:", error);
+          // 실패 시에도 URL 이동 (옵션)
+          window.location.href =
+            "https://h-event.hyundai.com/event/electrified_gv70_drive";
+        });
     },
   },
 };
