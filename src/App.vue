@@ -20,10 +20,8 @@
 export default {
   methods: {
     handleVideoEnd() {
-      // 현재 시간 기록 (한국 표준시로 변환)
-      const timestamp = new Date().toLocaleString("ko-KR", {
-        timeZone: "Asia/Seoul",
-      });
+      // 현재 시간 기록 (ISO 8601 형식)
+      const timestamp = new Date().toISOString();
 
       fetch("/api/log-visit", {
         method: "POST",
